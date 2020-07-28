@@ -2,27 +2,27 @@ package main
 
 import (
 	"datastructure"
+	"fmt"
 )
 
 func main() {
-	a := datastructure.NewTree()
+	a := datastructure.Heap{}
 
-	a.Insert(13)
-	a.Insert(5)
-	a.Insert(162)
-	a.Insert(234)
-	a.Insert(6)
-	a.Insert(8)
-	a.Insert(6)
-	a.Insert(162)
-	a.Insert(162)
-	a.Insert(2)
-	a.Insert(1)
-	a.Insert(150)
-	a.Insert(132)
+	a.Push(31)
+	a.Push(12)
+	a.Push(35)
+	a.Push(21)
+	a.Push(5324)
+	a.Push(1)
 
-	a.RecurSiveDFS()
-	a.StackDFS()
+	a.PrintHeap()
 
-	a.BFS()
+	fmt.Println(a.Pop())
+	fmt.Println(a.Pop())
+	fmt.Println(a.Pop())
+	fmt.Println(a.Pop())
+	fmt.Println(a.Pop())
+	fmt.Println(a.Pop())
+	fmt.Println(a.Pop())
+
 }
