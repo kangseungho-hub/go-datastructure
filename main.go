@@ -6,23 +6,10 @@ import (
 )
 
 func main() {
-	a := datastructure.Heap{}
 
-	a.Push(31)
-	a.Push(12)
-	a.Push(35)
-	a.Push(21)
-	a.Push(5324)
-	a.Push(1)
+	m := datastructure.Map{}
+	m.Add("kangseungho", "01044982128")
 
-	a.PrintHeap()
-
-	fmt.Println(a.Pop())
-	fmt.Println(a.Pop())
-	fmt.Println(a.Pop())
-	fmt.Println(a.Pop())
-	fmt.Println(a.Pop())
-	fmt.Println(a.Pop())
-	fmt.Println(a.Pop())
+	fmt.Println(m.Get("kangseungho"))
 
 }
