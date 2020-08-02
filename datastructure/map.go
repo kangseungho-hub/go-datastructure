@@ -4,10 +4,14 @@ type Map struct {
 	keyArray [3571][]KeyValue
 }
 
+func NewMap() *Map{
+	return &Map{} 
+}
 type KeyValue struct {
 	key   string
 	value string
 }
+
 
 func RollingHash(str string) int {
 	h := 0
