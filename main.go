@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"game"
 	"log"
 
@@ -25,9 +26,10 @@ func RunGame(screen *ebiten.Image) error {
 
 	screen.DrawImage(BgImg, nil)
 
-	for _, ware := range BlueWares.Wares {
-		opt.GeoM.Translate(ware.PositionX, ware.PositionY)
-		screen.DrawImage(ware.Img, opt)
+	for _, name := range BlueWares.WareNames {
+		fmt.Println(name)
+		opt.GeoM.Translate(BlueWares.Wares[name].PositionX, BlueWares.Wares[name].PositionY)
+		screen.DrawImage(BlueWares.Wares[name].Img, opt)
 	}
 
 	return nil
