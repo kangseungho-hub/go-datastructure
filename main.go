@@ -22,20 +22,28 @@ const (
 )
 
 func RunGame(screen *ebiten.Image) error {
-	opt := &ebiten.DrawImageOptions{}
 
 	screen.DrawImage(BgImg, nil)
 
+	fmt.Println(ebiten.CursorPosition())
 	for _, name := range BlueWares.WareNames {
-		fmt.Println(name)
+		opt := &ebiten.DrawImageOptions{}
 		opt.GeoM.Translate(BlueWares.Wares[name].PositionX, BlueWares.Wares[name].PositionY)
 		screen.DrawImage(BlueWares.Wares[name].Img, opt)
+	}
+
+	for _, name := range RedWares.WareNames {
+		opt := &ebiten.DrawImageOptions{}
+		opt.GeoM.Translate(RedWares.Wares[name].PositionX, RedWares.Wares[name].PositionY)
+		screen.DrawImage(RedWares.Wares[name].Img, opt)
 	}
 
 	return nil
 }
 
 func main() {
+	b := game.NewBoard()
+	fmt.Println(b)
 	BgImg = game.NewImage("game/images/bgimg.png", ebiten.FilterDefault)
 	err := ebiten.Run(RunGame, WindowWidth, WindowHeight, windowScale, "twelveJanggi")
 
